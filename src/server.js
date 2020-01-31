@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-const dogsRouter = require('../src/Dogs/dogs-router');
-const catsRouter = require('../src/Cats/cats-router');
-const adoptersRouter = require('../src/Adopters/adopters-router');
+const dogsRouter = require('./Dogs/dogs-router');
+const catsRouter = require('./Cats/cats-router');
+const adoptersRouter = require('./Adopters/adopters-router');
 const { PORT, CLIENT_ORIGIN } = require('./config');
 
 
