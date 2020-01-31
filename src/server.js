@@ -4,13 +4,13 @@ const morgan = require('morgan');
 const dogsRouter = require('../src/Dogs/dogs-router');
 const catsRouter = require('../src/Cats/cats-router');
 const adoptersRouter = require('../src/Adopters/adopters-router');
-const { PORT, CLIENT_ORIGIN } = require('./config');
+const { PORT, CLIENT_ORIGIN, TEST_ORIGIN } = require('./config');
 
 
 const app = express();
 
 app.use(cors({
-  origin: CLIENT_ORIGIN
+  origin: (CLIENT_ORIGIN || TEST_ORIGIN)
 }));
 
 const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
