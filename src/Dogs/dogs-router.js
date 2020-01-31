@@ -2,6 +2,7 @@ const express = require('express');
 const DogsService = require('./dogs-service');
 
 const dogsRouter = express.Router();
+const jsonBodyParser = express.json();
 
 dogsRouter
   .route('/')
