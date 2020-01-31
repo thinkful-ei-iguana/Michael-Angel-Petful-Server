@@ -7,6 +7,15 @@ app.use(cors());
 const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
 app.use(morgan(morganSetting));
 
+
+app.use('/api/dogs', dogsRouter);
+app.use('/api/cats', catsRouter);
+app.use('/api/adopters', adoptersRouter);
+
+app.get('/', (req, res)=> {
+  res.send('Hello')
+})
+
 // Catch-all 404
 app.use(function (req, res, next) {
   const err = new Error('Not Found');
