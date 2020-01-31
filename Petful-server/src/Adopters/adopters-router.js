@@ -9,19 +9,15 @@ adoptersRouter
     const adopters = AdoptersService.getAdopters();
     res.json(adopters);
   })
-  .delete((req, res) => {
-    res.status(200).send(AdoptersService.adopt());
-  });
-
-adoptersRouter
-  .route('/post')
   .post((req, res)=> {
     const {name} = req.body;
     const newName = {name};
 
     const newList = AdoptersService.addName(newName);
     res.json(newList);
+  })
+  .delete((req, res) => {
+    res.status(200).send(AdoptersService.adopt());
   });
-
 
 module.exports = adoptersRouter;
