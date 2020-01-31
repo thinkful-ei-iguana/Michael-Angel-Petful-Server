@@ -1,6 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const dogsRouter = require('../src/Dogs/dogs-router');
+const catsRouter = require('../src/Cats/cats-router');
+const adoptersRouter = require('../src/Adopters/adopters-router');
+const { PORT } = require('./config');
+
 
 const app = express();
 app.use(cors());
@@ -13,7 +18,7 @@ app.use('/api/cats', catsRouter);
 app.use('/api/adopters', adoptersRouter);
 
 app.get('/', (req, res)=> {
-  res.send('Hello')
+  res.send('Hello World')
 })
 
 // Catch-all 404

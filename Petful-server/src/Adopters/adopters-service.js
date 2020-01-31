@@ -9,14 +9,14 @@ const adopterData = [
   {name: "Rox"},
   {name: "Brendan"},
   {name: "Steve"},
-  {name:"Marcus"},
-  {name:"Richard"},
-  {name:"Sam"},
-  {name:"Mary"},
-  {name:"Anne"}
+  {name: "Marcus"},
+  {name: "Richard"},
+  {name: "Sam"},
+  {name: "Mary"},
+  {name: "Anne"}
 ];
 
-adoptersData.forEach(eachAdopter => {
+adopterData.forEach(eachAdopter => {
   adopters.enqueue(eachAdopter);
 });
 

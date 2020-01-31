@@ -134,6 +134,7 @@ dogStore.forEach(eachDog => {
 const DogsService = {
   getDogs() {
     const displayDogs = displayQ(dogs);
+    return displayDogs;
   },
   inlineForAdoption() {
     return dogs.peek();
