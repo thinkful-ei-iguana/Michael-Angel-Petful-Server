@@ -9,8 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "predeploy" : "npm audit",
-    "deploy" : "git push heroku"
+    "predeploy": "npm audit",
+    "deploy": "git push heroku"
   },
   "dependencies": {
     "cors": "^2.8.5",

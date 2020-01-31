@@ -10,7 +10,7 @@ dogsRouter
     res.json(dogs);
   })
   .delete((req, res) =>{
-    res.status(200).send(DogsService.adoptDog())
+    res.status(200).send(DogsService.adoptDog());
   });
 
 module.exports = dogsRouter;
