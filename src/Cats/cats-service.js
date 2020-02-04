@@ -128,7 +128,7 @@ let catStore = [
 ];
 
 catStore.forEach(eachCat => {
-  cats.enqueue(eachCat)
+  cats.enqueue(eachCat);
 });
 
 const CatsService = {

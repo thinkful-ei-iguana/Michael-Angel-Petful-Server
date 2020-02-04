@@ -4,16 +4,46 @@ const {displayQ} = require('../Queue');
 let adopters = new Queue();
 
 const adopterData = [
-  {name: "Mike"},
-  {name: "Angel"},
-  {name: "Rox"},
-  {name: "Brendan"},
-  {name: "Steve"},
-  {name: "Marcus"},
-  {name: "Richard"},
-  {name: "Sam"},
-  {name: "Mary"},
-  {name: "Anne"}
+  {
+    name: 'Mike',
+    adopting: false
+  },
+  {
+    name: 'Angel',
+    adopting: false
+  },
+  {
+    name: 'Rox',
+    adopting: false
+  },
+  {
+    name: 'Brendan',
+    adopting: false
+  },
+  {
+    name: 'Steve',
+    adopting: false
+  },
+  {
+    name: 'Marcus', 
+    adopting: false
+  },
+  {
+    name: 'Richard',
+    adopting: false
+  },
+  {
+    name: 'Sam', 
+    adopting: false
+  },
+  {
+    name: 'Mary', 
+    adopting: false
+  },
+  { 
+    name: 'Anne', 
+    adopting: false
+  }
 ];
 
 adopterData.forEach(eachAdopter => {
@@ -21,8 +51,11 @@ adopterData.forEach(eachAdopter => {
 });
 
 const AdoptersService = {
+  setInterval() {
+
+  },
   getAdopters() {
-    const displayAdopters = displayQ(adopters)
+    const displayAdopters = displayQ(adopters);
     return displayAdopters;
   },
   inlineForAdoption() {
@@ -30,12 +63,12 @@ const AdoptersService = {
   },
   addName(name) {
     adopterData.push(name);
-    adopters.enqueue(name)
-    return displayQ(adopters)
+    adopters.enqueue(name);
+    return displayQ(adopters);
   },
   adopt() {
     adopters.dequeue();
-    return displayQ(adopters)
+    return displayQ(adopters);
   }
 };
 
