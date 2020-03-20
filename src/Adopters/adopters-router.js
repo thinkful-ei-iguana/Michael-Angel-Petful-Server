@@ -1,5 +1,6 @@
 const express = require('express');
 const AdoptersService = require('./adopters-service');
+const jsonBodyParser = express.json();
 
 const adoptersRouter = express.Router();
 
@@ -9,7 +10,7 @@ adoptersRouter
     const adopters = AdoptersService.getAdopters();
     res.json(adopters);
   })
-  .post((req, res)=> {
+  .post(jsonBodyParser, (req, res)=> {
     const {name} = req.body;
     const newName = {name};
 

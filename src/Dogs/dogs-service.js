@@ -142,7 +142,7 @@ const DogsService = {
   adoptDog() {
     const aD = dogs.dequeue();
     aD.adopted = true;
-    dogs.enqueue(aD)
+    dogs.enqueue(aD);
     return displayQ(dogs);
   }
 };

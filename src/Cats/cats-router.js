@@ -1,6 +1,7 @@
 const express = require('express');
 const CatsService = require('./cats-service');
 const catsRouter = express.Router();
+const jsonBodyParser = express.json();
 
 
 catsRouter
