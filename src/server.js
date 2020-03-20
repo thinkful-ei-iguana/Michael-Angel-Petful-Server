@@ -1,25 +1,23 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const { PORT, CLIENT_ORIGIN } = require('./config');
+
 const dogsRouter = require('../src/Dogs/dogs-router');
 const catsRouter = require('../src/Cats/cats-router');
 const adoptersRouter = require('../src/Adopters/adopters-router');
-const { PORT, CLIENT_ORIGIN } = require('./config');
-
 
 const app = express();
 
-app.use(cors({
-  origin: CLIENT_ORIGIN
-}));
+app.use(cors())
 
 const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
 app.use(morgan(morganSetting));
 
 
-app.use('/api/dogs', dogsRouter);
-app.use('/api/cats', catsRouter);
-app.use('/api/adopters', adoptersRouter);
+app.use('/api/dogs', cors(), dogsRouter);
+app.use('/api/cats', cors(), catsRouter);
+app.use('/api/adopters', cors(), adoptersRouter);
 
 app.get('/', (req, res)=> {
   res.send('Hello World');
