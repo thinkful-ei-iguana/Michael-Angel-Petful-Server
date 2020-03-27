@@ -11,13 +11,7 @@ catsRouter
     res.json(cats);
   })
   .delete((req, res, next) => {
-    let deletedCat = null;
-    if(this.adoptionCallback) {
-      deletedCat = this.adoptionCallback();
-    }
-    return res
-      .status(200)
-      .send(JSON.stringify(deletedCat));
+    res.status(200).send(CatsService.adoptCat());
   });
 
 module.exports = catsRouter;
